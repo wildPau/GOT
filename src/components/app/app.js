@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Col, Row, Container} from 'reactstrap';
 import Header from '../header';
-// import RandomChar from '../randomChar';
+// import RandomChar from '../_old/randomChar';
 import RandomChar from '../randomChar/randomCharTryHooks';
 import ErrorMessage from '../errorMessage';
 import {CharacterPage, BooksPage, HousesPage, BooksItem} from '../pages';
@@ -47,7 +47,7 @@ export default class App extends Component {
 
 
     render() {
-        const char = this.state.showRandomChar ? <RandomChar getData={this.gotService.getCharacter} interval={100000}/> : null;
+        const char = this.state.showRandomChar ? <RandomChar getData={this.gotService.getCharacter} interval={2500}/> : null;
 
         if (this.state.error) {
             return <ErrorMessage/>

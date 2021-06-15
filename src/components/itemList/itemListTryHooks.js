@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './itemList.css';
 import Spinner from '../spinner';
-// import PropTypes from 'prop-types';`
+import PropTypes from 'prop-types';
 
-export default function ItemList ({getData, onItemSelected, renderItem}) {
+ function ItemList ({getData, onItemSelected, renderItem}) {
 
     const [itemList, updateList] = useState([]);   //наш state
 
@@ -46,16 +46,22 @@ export default function ItemList ({getData, onItemSelected, renderItem}) {
     );
 }
 
-    // ItemList.defaulProps ={
-    //     onItemSelected: () => {}
-    // }
+    ItemList.defaulProps ={
+        onItemSelected: () => {}
+    }
 
 
 
 
-// ItemList.PropTypes ={
-//     onItemSelected: PropTypes.func,
-//     // getData: PropTypes.arrayOf(PropTypes.object)
-//     //проверка передаваемых пропсов на тип данных
-// }
+ItemList.PropTypes ={
+    onItemSelected: PropTypes.func,
+    // getData: PropTypes.arrayOf(PropTypes.object)
+    //проверка передаваемых пропсов на тип данных
+}
+
+
+export default ItemList;
+
+
+
 //Логика компонента: получает список items, отрисовывает его, при клике отслеживает id item и передает родителю что бы тот отрисовал другой компонент с нашим id 

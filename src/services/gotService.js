@@ -45,6 +45,7 @@ export default class GotService {
     }
 
     isSet(data) {
+        // console.log(data)
         if (data) {
             return data
         } else {
@@ -74,8 +75,8 @@ export default class GotService {
             name: this.isSet(house.name),
             region: this.isSet(house.region),
             words: this.isSet(house.words),
-            titles: this.isSet(house.titles),
-            ancestralWeapons: this.isSet(house.ancestralWeapons)
+            titles: this.isSet(house.titles[0]),
+            ancestralWeapons: this.isSet(house.ancestralWeapons[0])
         };
     }
     

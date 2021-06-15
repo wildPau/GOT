@@ -61,10 +61,10 @@ export default function  ItemDetails ({getData, itemId}) {
             <ul className="list-group list-group-flush">
                 {
 
-                    <Field item={item}/>
-                        // React.Children.map(this.props.children, (child) => {
-                        //     return React.cloneElement(child, {item})
-                        // })
+                    // <Field item={item}/>
+                        React.Children.map(this.props.children, (child) => {
+                            return React.cloneElement(child, {item})
+                        })
                 }
             </ul>
         </div>
