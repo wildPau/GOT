@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './itemDetails.css';
-// import Spinner from '../spinner/index';
 
-//todo не знаю как переделать React.Children.map и отрисовать компонент (всё сделал, только отрисовать нужно ниже нужно правильно передать только item)
+//todo I don`t khow how to chandge  React.Children.map in the Hooks component  it just doesn`t render (всё сделал, только отрисовать нужно, ниже нужно правильно передать только item)
 
 
 const Field = ({item, field, label}) => {
@@ -22,11 +21,10 @@ export {
 export default function  ItemDetails ({getData, itemId}) {
 
 
-    const [item, setItem] = useState(null);   //наш state
+    const [item, setItem] = useState(null);   
 
     useEffect( () => {   //вместо componentDidMount - загрузка компонента
         updateItem();
-
     }, [itemId])
     
     
@@ -46,7 +44,6 @@ export default function  ItemDetails ({getData, itemId}) {
 
     }
     
-    
 
     if (!item) {
         return <span className='select-error'>Please select item in the list</span>
@@ -60,8 +57,6 @@ export default function  ItemDetails ({getData, itemId}) {
             <h4>{name}</h4>
             <ul className="list-group list-group-flush">
                 {
-
-                    // <Field item={item}/>
                         React.Children.map(this.props.children, (child) => {
                             return React.cloneElement(child, {item})
                         })

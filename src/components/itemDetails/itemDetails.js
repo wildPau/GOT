@@ -24,9 +24,11 @@ export default class ItemDetails extends Component {
 
     componentDidMount() {
         this.updateItem();
+
     }
     
     componentDidUpdate(prevProps) {
+
         if (this.props.itemId !== prevProps.itemId) {
             this.updateItem();
         }
@@ -52,6 +54,7 @@ export default class ItemDetails extends Component {
         const {item} = this.state;
         const {name} = item;
 
+ 
         return (
             <div className="char-details rounded">
                 <h4>{name}</h4>

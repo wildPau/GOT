@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 
 
-//TODO: ошибку отработать!!!!
 
 export default function RandomChar({getData, interval})  {
     
@@ -32,7 +31,6 @@ export default function RandomChar({getData, interval})  {
             })
     }
 
-    // console.log(char)
         if (!char){
             return <Spinner/>
         }

@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 
  function ItemList ({getData, onItemSelected, renderItem}) {
 
-    const [itemList, updateList] = useState([]);   //наш state
+    const [itemList, updateList] = useState([]);  
 
     useEffect(()=>{   //вместо componentDidMount - загрузка компонента
         getData()
             .then( (data) => {
-                updateList(data) //функция изменяющяя state (itemList)
+                updateList(data) 
             })
-    }, []) //передаём пустой массив как второй аргумент useEffect для сравнения полученных данных с сервера и имеющихся, что бы не было бесконеч цикла (не скачиваем данные которые у нас уже есть)
+    }, []) 
 
 
     function renderItems(arr) {
@@ -53,10 +53,10 @@ import PropTypes from 'prop-types';
 
 
 
-ItemList.PropTypes ={
+ItemList.propTypes ={
     onItemSelected: PropTypes.func,
-    // getData: PropTypes.arrayOf(PropTypes.object)
-    //проверка передаваемых пропсов на тип данных
+    getData: PropTypes.func
+    
 }
 
 
@@ -64,4 +64,9 @@ export default ItemList;
 
 
 
-//Логика компонента: получает список items, отрисовывает его, при клике отслеживает id item и передает родителю что бы тот отрисовал другой компонент с нашим id 
+
+/**
+ * передаём пустой массив как второй аргумент useEffect для сравнения полученных данных с сервера и имеющихся, что бы не было бесконеч цикла (не скачиваем данные которые у нас уже есть)
+ * Логика компонента: получает список items, отрисовывает его, при клике отслеживает id item и передает родителю что бы тот отрисовал другой компонент с нашим id
+ * PropTypes : проверка передаваемых пропсов на тип данных
+ */
